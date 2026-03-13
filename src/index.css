@@ -33,6 +33,14 @@
   --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
 }
 
+html {
+  overflow-y: scroll;
+}
+
+.bento-item {
+  will-change: transform, opacity;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -196,4 +204,5 @@ h1, h2, h3, h4, h5, h6 {
   inset: 0;
   z-index: -2;
   pointer-events: none;
+  transform: translateZ(0); /* Force GPU layer */
 }

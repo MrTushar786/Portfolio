@@ -79,7 +79,6 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* Dynamic Education Journey Section */}
         <div style={{ gridColumn: 'span 12', marginTop: '32px' }}>
           <h3 style={{ fontSize: '1.5rem', marginBottom: '24px', color: 'var(--text-primary)' }}>Education Journey</h3>
           <div className="education-journey-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
@@ -91,17 +90,23 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                style={{ position: 'relative', overflow: 'hidden' }}
+                style={{ 
+                  position: 'relative', 
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%'
+                }}
               >
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                  <div style={{ padding: '10px', background: 'rgba(var(--accent-rgb), 0.1)', borderRadius: '12px', color: 'var(--accent)' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', height: '100%' }}>
+                  <div style={{ padding: '10px', background: 'rgba(var(--accent-rgb), 0.1)', borderRadius: '12px', color: 'var(--accent)', flexShrink: 0 }}>
                     <GraduationCap size={24} />
                   </div>
-                  <div>
+                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
                     <h4 style={{ fontSize: '1.2rem', marginBottom: '4px' }}>{edu.institution}</h4>
                     <p style={{ color: 'var(--accent)', fontWeight: '600', fontSize: '0.9rem', marginBottom: '12px' }}>{edu.degree}</p>
                     
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '16px' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <Calendar size={14} /> {edu.duration}
                       </div>
@@ -113,7 +118,15 @@ export default function About() {
                       </div>
                     </div>
                     
-                    <div style={{ marginTop: '16px', padding: '12px', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', fontSize: '0.85rem', fontStyle: 'italic', borderLeft: '2px solid var(--accent)' }}>
+                    <div style={{ 
+                      marginTop: 'auto', 
+                      padding: '12px', 
+                      background: 'rgba(255,255,255,0.03)', 
+                      borderRadius: '8px', 
+                      fontSize: '0.85rem', 
+                      fontStyle: 'italic', 
+                      borderLeft: '2px solid var(--accent)' 
+                    }}>
                       {edu.highlight}
                     </div>
                   </div>
