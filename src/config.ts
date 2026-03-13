@@ -53,7 +53,7 @@ export const CONFIG = {
       "Currently building fintech at SmartMoney AI",
       "I build scalable full stack applications",
       "I ship products, not just projects",
-      "Full Stack Web Developer at a real startup"
+      "Frontend Web Developer at a real startup"
     ],
     subtitle: "Full Stack Web Developer · Software Engineer · Builder. I don't just write code — I build products that work in production.",
     stats: [
