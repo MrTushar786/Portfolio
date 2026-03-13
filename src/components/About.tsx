@@ -1,14 +1,19 @@
 import { motion } from 'framer-motion';
+import { CONFIG } from '../config';
+import { GraduationCap, MapPin, Calendar, Star } from 'lucide-react';
 
 export default function About() {
+  const { profile } = CONFIG;
+  
   return (
     <section id="about" className="container section-padding">
       <div className="section-header">
-        <h2 className="section-title">About Me</h2>
-        <p className="section-subtitle">Building products that actually ship.</p>
+        <h2 className="section-title">{CONFIG.sections.about.title}</h2>
+        <p className="section-subtitle">{CONFIG.sections.about.subtitle}</p>
       </div>
 
       <div className="bento-grid">
+        {/* Main Bio Card */}
         <motion.div 
           className="bento-item glass-card"
           style={{ gridColumn: 'span 8' }}
@@ -18,21 +23,22 @@ export default function About() {
           transition={{ duration: 0.6 }}
         >
           <div className="bento-glow"></div>
-          <h3 style={{ fontSize: '1.8rem', marginBottom: '16px' }}>I'm Tushar Ahmad</h3>
-          <p style={{ color: 'var(--text-secondary)', marginBottom: '16px', fontSize: '1.05rem' }}>
-            I am a Full Stack Web Developer and a Computer Science (B.Tech) student at Lovely Professional University. I specialize in building scalable, production-ready applications that bridge the gap between complex backend logic and intuitive user experiences.
-          </p>
-          <p style={{ color: 'var(--text-secondary)', marginBottom: '16px', fontSize: '1.05rem' }}>
-            My approach is product-focused. Whether I'm architecting fintech platforms solo or engineering AI-driven mock interview systems, I take full ownership of the technical stack to ensure performance, security, and scalability. I build for the real world, not just for a portfolio.
-          </p>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '16px', fontSize: '1.05rem' }}>
-              My stack centers on <strong>React 19, TypeScript, Vite, Tailwind CSS, NestJS, PostgreSQL, and Docker</strong>. I'm a Computer Science (B.Tech) student at Lovely Professional University with a <strong>CGPA of 7.19</strong>.
+          <h3 style={{ fontSize: '1.8rem', marginBottom: '16px' }}>I'm {profile.fullName}</h3>
+          
+          {profile.about.bio.map((paragraph, i) => (
+            <p key={i} style={{ color: 'var(--text-secondary)', marginBottom: '16px', fontSize: '1.05rem', lineHeight: '1.6' }}>
+              {paragraph}
             </p>
-          <p style={{ color: 'var(--accent)', fontWeight: 'bold' }}>
-            "Building is good, but shipping is what proves skill."
-          </p>
+          ))}
+          
+          <div style={{ marginTop: '24px', padding: '16px', borderRadius: '12px', background: 'rgba(var(--accent-rgb), 0.1)', border: '1px solid var(--accent)' }}>
+            <p style={{ color: 'var(--accent)', fontWeight: 'bold' }}>
+              "{profile.about.quote}"
+            </p>
+          </div>
         </motion.div>
 
+        {/* Profile Stats Card */}
         <motion.div 
           className="bento-item glass-card"
           style={{ 
@@ -50,7 +56,7 @@ export default function About() {
         >
           <img 
             src="/photo.png" 
-            alt="Tushar Ahmad Profile" 
+            alt={`${profile.fullName} Profile`} 
             style={{ 
               width: '100%', 
               height: '100%', 
@@ -68,10 +74,54 @@ export default function About() {
             background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
             color: '#fff'
           }}>
-            <p style={{ fontWeight: 'bold', fontSize: '0.9rem' }}>Tushar Ahmad</p>
-            <p style={{ fontSize: '0.75rem', opacity: 0.8 }}>Full Stack Web Developer</p>
+            <p style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{profile.fullName}</p>
+            <p style={{ fontSize: '0.85rem', opacity: 0.9 }}>{profile.role}</p>
           </div>
         </motion.div>
+
+        {/* Dynamic Education Journey Section */}
+        <div style={{ gridColumn: 'span 12', marginTop: '32px' }}>
+          <h3 style={{ fontSize: '1.5rem', marginBottom: '24px', color: 'var(--text-primary)' }}>Education Journey</h3>
+          <div className="education-journey-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+            {profile.educationJourney.map((edu, idx) => (
+              <motion.div 
+                key={edu.degree}
+                className="bento-item glass-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                style={{ position: 'relative', overflow: 'hidden' }}
+              >
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                  <div style={{ padding: '10px', background: 'rgba(var(--accent-rgb), 0.1)', borderRadius: '12px', color: 'var(--accent)' }}>
+                    <GraduationCap size={24} />
+                  </div>
+                  <div>
+                    <h4 style={{ fontSize: '1.2rem', marginBottom: '4px' }}>{edu.institution}</h4>
+                    <p style={{ color: 'var(--accent)', fontWeight: '600', fontSize: '0.9rem', marginBottom: '12px' }}>{edu.degree}</p>
+                    
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <Calendar size={14} /> {edu.duration}
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <MapPin size={14} /> {edu.location}
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', fontWeight: '600', marginTop: '4px' }}>
+                        <Star size={14} style={{ color: '#FFD700' }} /> {edu.stats}
+                      </div>
+                    </div>
+                    
+                    <div style={{ marginTop: '16px', padding: '12px', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', fontSize: '0.85rem', fontStyle: 'italic', borderLeft: '2px solid var(--accent)' }}>
+                      {edu.highlight}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,13 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CONFIG } from '../config';
 import cvFile from '../assets/Cv/Tushar Cv-5.pdf';
 
-const titles = [
-  "Currently building fintech at SmartMoney AI",
-  "I build scalable full stack applications",
-  "I ship products, not just projects",
-  "Full Stack Web Developer at a real startup"
-];
+const titles = CONFIG.hero.titles;
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
@@ -31,22 +27,6 @@ export default function Hero() {
   return (
     <section id="home" className="hero-section container">
       <motion.div 
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-        className="hero-image-container"
-      >
-        <img 
-          src="/photo.png" 
-          alt="Tushar Ahmad" 
-          className="hero-image"
-          onError={(e) => {
-            (e.target as HTMLImageElement).style.display = 'none';
-          }}
-        />
-      </motion.div>
-
-      <motion.div 
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -54,7 +34,7 @@ export default function Hero() {
         <div className="status-badge">
           <span className="status-dot"></span>
           <span className="status-text">
-            <span>Part-time Employee</span> · Remote
+            <span>{CONFIG.profile.status.label}</span> · {CONFIG.profile.status.location}
           </span>
         </div>
       </motion.div>
@@ -65,7 +45,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}
       >
-        TUSHAR AHMAD
+        {CONFIG.profile.fullName.toUpperCase()}
       </motion.h1>
 
       <motion.h2 
@@ -74,9 +54,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        Full Stack Web Developer · Software Engineer · Builder.
-        <br />
-        I don't just write code — I build products that work in production.
+        {CONFIG.hero.subtitle}
       </motion.h2>
 
       <motion.div 
@@ -98,11 +76,27 @@ export default function Hero() {
         </AnimatePresence>
       </motion.div>
 
+      {/* Hero Stats - Smartly handling the extra space */}
+      <motion.div 
+        className="hero-stats-grid"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
+        {CONFIG.hero.stats.map((stat, i) => (
+          <div key={i} className="hero-stat-card glass-card">
+            <span className="stat-label">{stat.label}</span>
+            <span className="stat-value">{stat.value}</span>
+          </div>
+        ))}
+      </motion.div>
+
       <motion.div 
         className="hero-actions"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        style={{ marginTop: '48px' }}
       >
         <a 
           href="#projects" 
@@ -113,7 +107,7 @@ export default function Hero() {
         </a>
         <a 
           href={cvFile}
-          download="Tushar_Ahmad_CV.pdf"
+          download={`${CONFIG.profile.fullName.replace(' ', '_')}_CV.pdf`}
           className="btn-secondary"
         >
           Download CV

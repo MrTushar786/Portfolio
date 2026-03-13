@@ -15,8 +15,8 @@ export default function Projects() {
   return (
     <section id="projects" className="container section-padding">
       <div className="section-header">
-        <h2 className="section-title">Other Projects</h2>
-        <p className="section-subtitle">A showcase of full-stack engineering projects.</p>
+        <h2 className="section-title">{CONFIG.sections.projects.title}</h2>
+        <p className="section-subtitle">{CONFIG.sections.projects.subtitle}</p>
       </div>
 
       <div className="projects-grid">

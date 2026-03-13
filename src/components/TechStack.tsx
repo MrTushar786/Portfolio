@@ -43,21 +43,16 @@ const techConfig: Record<string, { icon: any, color: string, slug: string }> = {
   'PHP': { icon: SiPhp, color: '#777BB4', slug: 'PHP' },
 };
 
-const skills = {
-  Frontend: ['React 19', 'TypeScript', 'JavaScript', 'Vite', 'Tailwind CSS', 'HTML5', 'CSS3', 'Bootstrap', 'Three.js'],
-  Backend: ['NestJS', 'Node.js', 'Express.js', 'FastAPI', 'Socket.io'],
-  Databases: ['PostgreSQL', 'MongoDB', 'MySQL'],
-  'DevOps & Tools': ['Docker', 'Git', 'GitHub', 'Bitbucket', 'Vercel', 'Netlify', 'npm', 'Postman'],
-  Languages: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C', 'C++', 'PHP'],
-  'Design & Other': ['Figma', 'Adobe Photoshop', 'Canva', 'Supabase']
-};
+import { CONFIG } from '../config';
+
+const skills = CONFIG.skills;
 
 export default function TechStack() {
   return (
     <section id="tech-stack" className="container section-padding">
       <div className="section-header">
-        <h2 className="section-title">Tech Stack</h2>
-        <p className="section-subtitle">Tools I use to ship production software.</p>
+        <h2 className="section-title">{CONFIG.sections.techStack.title}</h2>
+        <p className="section-subtitle">{CONFIG.sections.techStack.subtitle}</p>
       </div>
 
       <div className="tech-stack-container">

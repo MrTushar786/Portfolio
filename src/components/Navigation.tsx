@@ -6,14 +6,10 @@ interface NavigationProps {
   toggleTheme: () => void;
 }
 
+import { CONFIG } from '../config';
+
 export default function Navigation({ isDarkMode, toggleTheme }: NavigationProps) {
-  const links = [
-    { name: 'Home', target: 'home' },
-    { name: 'About', target: 'about' },
-    { name: 'Experience', target: 'experience' },
-    { name: 'Projects', target: 'projects' },
-    { name: 'Awards', target: 'certifications' },
-  ];
+  const links = CONFIG.navLinks;
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
     e.preventDefault();
