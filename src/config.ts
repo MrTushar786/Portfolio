@@ -17,7 +17,7 @@ export const CONFIG = {
         duration: "2023 – Present",
         location: "Phagwara, Punjab",
         highlight: "Current Milestone: Deep diving into Full Stack Engineering & System Design.",
-        stats: "CGPA: 7.19"
+        stats: "CGPA: 7.2"
       },
       {
         institution: "Kendriya Vidyalaya",
