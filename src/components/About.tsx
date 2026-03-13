@@ -6,33 +6,32 @@ export default function About() {
   const { profile } = CONFIG;
   
   return (
-    <section id="about" className="container section-padding">
-      <div className="section-header">
-        <h2 className="section-title">{CONFIG.sections.about.title}</h2>
-        <p className="section-subtitle">{CONFIG.sections.about.subtitle}</p>
+    <section id="about" className="w-full max-w-[1200px] mx-auto py-32 px-6">
+      <div className="mb-12 sm:mb-16 text-center">
+        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight mb-4">{CONFIG.sections.about.title}</h2>
+        <p className="text-text-secondary text-sm sm:text-[1.1rem]">{CONFIG.sections.about.subtitle}</p>
       </div>
 
-      <div className="bento-grid">
+      <div className="grid grid-cols-12 gap-6 mb-12">
         {/* Main Bio Card */}
         <motion.div 
-          className="bento-item glass-card"
-          style={{ gridColumn: 'span 8' }}
+          className="col-span-12 lg:col-span-8 group relative rounded-3xl bg-bg-secondary border border-[var(--glass-border)] p-8 transition-all duration-300 overflow-hidden hover:bg-white/[0.04] hover:border-white/10 hover:-translate-y-1 glass-card will-change-[transform,opacity]"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="bento-glow"></div>
-          <h3 style={{ fontSize: '1.8rem', marginBottom: '16px' }}>I'm {profile.fullName}</h3>
+          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+          <h3 className="text-[1.8rem] mb-4">I'm {profile.fullName}</h3>
           
           {profile.about.bio.map((paragraph, i) => (
-            <p key={i} style={{ color: 'var(--text-secondary)', marginBottom: '16px', fontSize: '1.05rem', lineHeight: '1.6' }}>
+            <p key={i} className="text-text-secondary mb-4 text-[1.05rem] leading-relaxed">
               {paragraph}
             </p>
           ))}
           
-          <div style={{ marginTop: '24px', padding: '16px', borderRadius: '12px', background: 'rgba(var(--accent-rgb), 0.1)', border: '1px solid var(--accent)' }}>
-            <p style={{ color: 'var(--accent)', fontWeight: 'bold' }}>
+          <div className="mt-6 p-4 rounded-xl bg-accent/10 border border-accent">
+            <p className="text-accent font-bold">
               "{profile.about.quote}"
             </p>
           </div>
@@ -40,15 +39,7 @@ export default function About() {
 
         {/* Profile Stats Card */}
         <motion.div 
-          className="bento-item glass-card"
-          style={{ 
-            gridColumn: 'span 4', 
-            padding: 0, 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'center',
-            minHeight: '300px'
-          }}
+          className="col-span-12 lg:col-span-4 group relative rounded-3xl bg-bg-secondary border border-[var(--glass-border)] transition-all duration-300 overflow-hidden hover:bg-white/[0.04] hover:border-white/10 hover:-translate-y-1 glass-card p-0 flex items-center justify-center min-h-[300px] will-change-[transform,opacity]"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -57,76 +48,47 @@ export default function About() {
           <img 
             src="/photo.png" 
             alt={`${profile.fullName} Profile`} 
-            style={{ 
-              width: '100%', 
-              height: '100%', 
-              objectFit: 'cover',
-              objectPosition: 'center 20%',
-              filter: 'grayscale(0.1) contrast(1.1)'
-            }} 
+            className="w-full h-full object-cover object-[center_20%] grayscale-[0.1] contrast-[1.1]"
           />
-          <div style={{
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            right: 0,
-            padding: '24px',
-            background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
-            color: '#fff'
-          }}>
-            <p style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{profile.fullName}</p>
-            <p style={{ fontSize: '0.85rem', opacity: 0.9 }}>{profile.role}</p>
+          <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+            <p className="font-bold text-[1.1rem]">{profile.fullName}</p>
+            <p className="text-[0.85rem] opacity-90">{profile.role}</p>
           </div>
         </motion.div>
 
-        <div style={{ gridColumn: 'span 12', marginTop: '32px' }}>
-          <h3 style={{ fontSize: '1.5rem', marginBottom: '24px', color: 'var(--text-primary)' }}>Education Journey</h3>
-          <div className="education-journey-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+        <div className="col-span-12 mt-8">
+          <h3 className="text-[1.5rem] mb-6 text-text-primary">Education Journey</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {profile.educationJourney.map((edu, idx) => (
               <motion.div 
                 key={edu.degree}
-                className="bento-item glass-card"
+                className="group relative rounded-3xl bg-bg-secondary border border-[var(--glass-border)] p-8 transition-all duration-300 overflow-hidden hover:bg-white/[0.04] hover:border-white/10 hover:-translate-y-1 glass-card flex flex-col h-full will-change-[transform,opacity]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                style={{ 
-                  position: 'relative', 
-                  overflow: 'hidden',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  height: '100%'
-                }}
               >
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', height: '100%' }}>
-                  <div style={{ padding: '10px', background: 'rgba(var(--accent-rgb), 0.1)', borderRadius: '12px', color: 'var(--accent)', flexShrink: 0 }}>
-                    <GraduationCap size={24} />
+                <div className="flex items-start gap-4 h-full">
+                  <div className="p-[10px] bg-accent/10 rounded-xl shrink-0">
+                    <GraduationCap size={24} className="text-accent" />
                   </div>
-                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
-                    <h4 style={{ fontSize: '1.2rem', marginBottom: '4px' }}>{edu.institution}</h4>
-                    <p style={{ color: 'var(--accent)', fontWeight: '600', fontSize: '0.9rem', marginBottom: '12px' }}>{edu.degree}</p>
+                  <div className="flex-1 flex flex-col h-full">
+                    <h4 className="text-[1.2rem] mb-1">{edu.institution}</h4>
+                    <p className="text-accent font-semibold text-[0.9rem] mb-3">{edu.degree}</p>
                     
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '16px' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <div className="flex flex-col gap-2 text-text-secondary text-[0.85rem] mb-4">
+                      <div className="flex items-center gap-2">
                         <Calendar size={14} /> {edu.duration}
                       </div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <div className="flex items-center gap-2">
                         <MapPin size={14} /> {edu.location}
                       </div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', fontWeight: '600', marginTop: '4px' }}>
-                        <Star size={14} style={{ color: '#FFD700' }} /> {edu.stats}
+                      <div className="flex items-center gap-2 text-text-primary font-semibold mt-1">
+                        <Star size={14} className="text-[#FFD700]" /> {edu.stats}
                       </div>
                     </div>
                     
-                    <div style={{ 
-                      marginTop: 'auto', 
-                      padding: '12px', 
-                      background: 'rgba(255,255,255,0.03)', 
-                      borderRadius: '8px', 
-                      fontSize: '0.85rem', 
-                      fontStyle: 'italic', 
-                      borderLeft: '2px solid var(--accent)' 
-                    }}>
+                    <div className="mt-auto p-3 bg-white/[0.03] rounded-lg text-[0.85rem] italic border-l-2 border-accent">
                       {edu.highlight}
                     </div>
                   </div>

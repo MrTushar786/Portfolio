@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
-import './App.css'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -19,7 +18,7 @@ function App() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.08, // Classic smooth lerp for 60fps feel
+      lerp: 0.08,
       wheelMultiplier: 1,
       touchMultiplier: 1.5,
       gestureOrientation: 'vertical',
@@ -49,8 +48,8 @@ function App() {
   const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
   return (
-    <main className="app-container">
-      <div className="ambient-glow"></div>
+    <main className="min-h-screen relative z-[1]">
+      <div className="fixed -top-[10%] sm:-top-[20%] left-1/2 -translate-x-1/2 w-[120vw] sm:w-[80vw] lg:w-[60vw] h-[120vw] sm:h-[80vw] lg:h-[60vw] bg-[radial-gradient(circle,var(--accent-glow)_0%,transparent_70%)] -z-[1] pointer-events-none will-change-transform"></div>
       <div className="bg-grid"></div>
 
       <Navigation toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
