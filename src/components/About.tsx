@@ -25,9 +25,9 @@ export default function About() {
           <p style={{ color: 'var(--text-secondary)', marginBottom: '16px', fontSize: '1.05rem' }}>
             My approach is product-focused. Whether I'm architecting fintech platforms solo or engineering AI-driven mock interview systems, I take full ownership of the technical stack to ensure performance, security, and scalability. I build for the real world, not just for a portfolio.
           </p>
-          <p style={{ color: 'var(--text-secondary)', marginBottom: '16px', fontSize: '1.05rem' }}>
-            My stack centers on <strong>React 19, TypeScript, Vite, Tailwind CSS, NestJS, PostgreSQL, and Docker</strong>. I've built everything from AI chat interfaces with real-time SSE streaming, to CAS-based portfolio upload flows, and mobile-ready apps using Capacitor.
-          </p>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: '16px', fontSize: '1.05rem' }}>
+              My stack centers on <strong>React 19, TypeScript, Vite, Tailwind CSS, NestJS, PostgreSQL, and Docker</strong>. I'm a Computer Science (B.Tech) student at Lovely Professional University with a <strong>CGPA of 7.19</strong>.
+            </p>
           <p style={{ color: 'var(--accent)', fontWeight: 'bold' }}>
             "Building is good, but shipping is what proves skill."
           </p>

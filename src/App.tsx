@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
+import Certifications from './components/Certifications'
 import TechStack from './components/TechStack'
 import Footer from './components/Footer'
 
@@ -32,6 +33,7 @@ function App() {
       <About />
       <Experience />
       <Projects />
+      <Certifications />
       <TechStack />
       <Footer />
     </main>

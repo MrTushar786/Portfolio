@@ -1,40 +1,15 @@
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
 
-const projects = [
-  {
-    title: "TutorHive",
-    type: "Full-Stack Development",
-    desc: "A full-stack tutor booking platform integrating tutor discovery, session scheduling, and profile management into a single unified workflow.",
-    tech: ["React", "Node.js", "Express.js", "MongoDB", "npm"],
-    github: "https://github.com/MrTushar786/TutorHive",
-    live: "#"
-  },
-  {
-    title: "HostelManix",
-    type: "Management System",
-    desc: "A centralized hostel management platform digitizing operations. Built 15+ reusable frontend components and optimized MongoDB aggregation for 2-3x faster retrieval.",
-    tech: ["React", "Express.js", "MongoDB Atlas"],
-    github: "https://github.com/MrTushar786/HostelManix",
-    live: "#"
-  },
-  {
-    title: "CV Builder",
-    type: "Frontend Tool",
-    desc: "Dynamic resume creator with real-time editing and instant live preview. Used 20+ modular React + TS components.",
-    tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
-    github: "https://github.com/MrTushar786/CV-Builder",
-    live: "#"
-  },
-  {
-    title: "Repairly",
-    type: "Workflow Platform",
-    desc: "Production-ready platform covering device repair lifecycle from customer booking to diagnostics and final pickup.",
-    tech: ["JavaScript", "Node.js", "Express.js", "MongoDB"],
-    github: "https://github.com/MrTushar786/Repairly",
-    live: "#"
-  }
-];
+import { CONFIG } from '../config';
+
+const projects = CONFIG.projects.map(p => ({
+  ...p,
+  desc: p.id === "tutorhive" ? "A full-stack tutor booking platform integrating tutor discovery, session scheduling, and profile management into a single unified workflow." :
+        p.id === "hostelmanix" ? "A centralized hostel management platform digitizing operations. Built 15+ reusable frontend components and optimized MongoDB aggregation for 2-3x faster retrieval." :
+        p.id === "cv-builder" ? "Dynamic resume creator with real-time editing and instant live preview. Used 20+ modular React + TS components." :
+        p.id === "repairly" ? "Production-ready platform covering device repair lifecycle from customer booking to diagnostics and final pickup." : ""
+}));
 
 export default function Projects() {
   return (

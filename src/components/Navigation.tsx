@@ -12,6 +12,7 @@ export default function Navigation({ isDarkMode, toggleTheme }: NavigationProps)
     { name: 'About', target: 'about' },
     { name: 'Experience', target: 'experience' },
     { name: 'Projects', target: 'projects' },
+    { name: 'Awards', target: 'certifications' },
   ];
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
