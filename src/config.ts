@@ -70,8 +70,14 @@ export const CONFIG = {
       duration: "Dec 2025 – Present",
       location: "Remote · India",
       isCurrent: true,
-      description: "SmartMoney AI is an AI-powered fintech startup building intelligent investment tools for Indian retail investors to analyze mutual fund portfolios, track financial goals, and get AI-driven insights.",
-      highlight: "I am the sole Frontend Web Developer, collaborating directly with the founding team to ship production-ready interfaces. I own every screen, component, and animation.",
+      points: [
+        "Founding team engineer responsible for architecting and building the entire frontend ecosystem from prototype to production.",
+        "Engineered an automated eCAS Portfolio Parser that analyzes mutual fund statements to eliminate manual data entry for users.",
+        "Developed interactive financial dashboards to track Net Worth, Portfolio Health, and Expense breakdowns in real-time.",
+        "Integrated 'MyGuide'—a conversational AI companion that provides streaming, context-aware financial advice and portfolio insights.",
+        "Designed a comprehensive Goal Management system to simulate and track future financial targets like retirement and wealth planning.",
+        "Deployed the platform as native iOS and Android applications via Capacitor, ensuring full feature parity across all devices."
+      ],
       tech: ['React 19', 'Vite', 'TS', 'Capacitor', 'NestJS', 'SSE', 'Docker']
     },
     {
@@ -79,47 +85,75 @@ export const CONFIG = {
       role: "Web Development Intern",
       type: "Internship",
       duration: "June 2025 – July 2025",
-      location: "On-site · Pune",
+      location: "Pune, India",
       isCurrent: false,
-      paragraphs: [
-        "Engineered a robust full-stack interview system that allows admins to schedule specialized interviews across various technical fields. The platform enables users to take interviews in a monitored environment with live interviewer presence.",
-        "Implemented real-time user activity tracking using Socket.io, allowing interviewers to monitor candidate progress live. For enhanced security, I developed integrated anti-cheat mechanisms including tab-switch detection and navigation restrictions to ensure a professional and integrity-focused interview experience."
+      points: [
+        "Designed and developed an end-to-end automated interview system that allows administrators to schedule and launch customizable technical interview sessions with configurable durations and subject focus.",
+        "Built an intuitive candidate interview interface supporting multi-modal responses including text and Voice-to-Text, along with anti-cheat measures such as tab-switch detection.",
+        "Implemented real-time interview monitoring using Socket.IO, enabling interviewers to track candidate activity live and dynamically push new questions during an active interview.",
+        "Developed an AI-assisted scoring engine integrated within the admin panel to automatically analyze candidate responses and generate evaluation scores.",
+        "Created a centralized HR dashboard to manage interview history, review AI-generated reports, and monitor the overall hiring workflow."
       ],
-      tech: ['React.js', 'NestJS', 'PostgreSQL', 'Socket.io', 'Docker']
+      tech: ['React', 'NestJS', 'PostgreSQL', 'Socket.IO', 'Docker']
     }
   ],
   projects: [
     {
       id: "tutorhive",
       title: "TutorHive",
-      type: "Full-Stack Development",
+      type: "Online Tutor Booking Platform",
       github: "https://github.com/MrTushar786/TutorHive",
       live: "https://tutorhivee.vercel.app/",
-      tech: ["React", "Node.js", "Express.js", "MongoDB", "npm"]
+      tech: ["React", "Node.js", "Express.js", "MongoDB", "npm"],
+      image: "/previews/tutorhive_preview.png",
+      features: [
+        "Spearheaded the development of a full-stack ecosystem combining tutor discovery, session booking, and profile management into a unified workflow.",
+        "Constructed a responsive React frontend with reusable components to ensure consistent UI/UX and seamless navigation across all devices.",
+        "Deployed robust RESTful APIs using MongoDB to facilitate efficient data handling and centralized management of tutors, students, and bookings."
+      ]
     },
     {
       id: "hostelmanix",
       title: "HostelManix",
-      type: "Management System",
+      type: "Hostel Management System",
       github: "https://github.com/MrTushar786/HostelManix",
       live: "https://hostelmanix.vercel.app/",
-      tech: ["React", "Express.js", "MongoDB Atlas"]
+      tech: ["React", "Node.js", "Express.js", "MongoDB Atlas", "npm"],
+      image: "/previews/hostelmanix_preview.png",
+      features: [
+        "Consolidated 4+ core hostel operations (allocations, records, attendance, complaints) into a centralized platform, boosting administrative efficiency by 30%.",
+        "Designed a high-fidelity frontend with 15+ reusable components, ensuring intuitive navigation and responsiveness.",
+        "Optimized data architecture with MongoDB Atlas APIs to achieve 2-3x faster retrieval rates and high-availability storage for dashboard operations."
+      ]
     },
     {
       id: "cv-builder",
       title: "CV Builder",
-      type: "Frontend Tool",
+      type: "Online Resume Creation Platform",
       github: "https://github.com/MrTushar786/CV-Builder",
       live: "https://cv-builder-xi-seven.vercel.app/",
-      tech: ["React", "TypeScript", "Vite", "Tailwind CSS"]
+      tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Node.js", "npm"],
+      image: "/previews/cvbuilder_preview.png",
+      features: [
+        "Launched a modern resume-building engine featuring 100% customizable templates, real-time editing, and instant 1:1 live previews.",
+        "Fabricated a modular UI utilizing 20+ React and TypeScript components, optimized with Vite for rapid build times and Tailwind for fluidity.",
+        "Streamlined user experience through efficient state management and a scalable architecture capable of handling complex user flows."
+      ]
     },
     {
       id: "repairly",
       title: "Repairly",
-      type: "Workflow Platform",
+      type: "Service Management & Booking Platform",
       github: "https://github.com/MrTushar786/Repairly",
       live: "https://repairly.in/",
-      tech: ["JavaScript", "Node.js", "Express.js", "MongoDB"]
+      tech: ["React", "Supabase", "Tailwind CSS", "Git"],
+      image: "/previews/repairly_preview.png",
+      features: [
+        "Developed a comprehensive mobile repair shop management system featuring a customer-facing portal and a robust administrative dashboard.",
+        "Engineered an end-to-end booking workflow and product catalog allowing users to discover available models and schedule repair requests seamlessly.",
+        "Built a high-control Admin Panel for real-time management of device models, service listings, booking statuses, and automated shop availability messaging.",
+        "Integrated Google Authentication for secure user onboarding and Supabase for real-time database management and backend services."
+      ]
     }
   ],
   certifications: [

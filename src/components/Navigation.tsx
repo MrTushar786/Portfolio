@@ -33,7 +33,7 @@ export default function Navigation({ isDarkMode, toggleTheme }: NavigationProps)
               key={link.name} 
               href={`#${link.target}`} 
               onClick={(e) => handleScroll(e, link.target)}
-              className="text-text-secondary no-underline text-[0.75rem] sm:text-[0.9rem] font-medium px-3 sm:px-4 py-2 rounded-full transition-all duration-300 hover:text-text-primary hover:bg-white/10 whitespace-nowrap"
+              className="text-text-secondary no-underline text-[0.75rem] sm:text-[0.9rem] font-medium px-3 sm:px-4 py-2 rounded-full transition-all duration-300 hover:text-text-primary hover:bg-text-primary/10 whitespace-nowrap"
             >
               {link.name}
             </a>
@@ -41,7 +41,7 @@ export default function Navigation({ isDarkMode, toggleTheme }: NavigationProps)
         </div>
         <button 
           onClick={toggleTheme} 
-          className="bg-transparent border-none text-text-secondary cursor-pointer p-2 flex items-center justify-center rounded-full transition-all duration-300 hover:text-text-primary hover:bg-white/10 shrink-0"
+          className="bg-transparent border-none text-text-secondary cursor-pointer p-2 flex items-center justify-center rounded-full transition-all duration-300 hover:text-text-primary hover:bg-text-primary/10 shrink-0"
           aria-label="Toggle Theme"
         >
           {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}

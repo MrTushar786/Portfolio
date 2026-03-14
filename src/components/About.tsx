@@ -15,14 +15,14 @@ export default function About() {
       <div className="grid grid-cols-12 gap-6 mb-12">
         {/* Main Bio Card */}
         <motion.div 
-          className="col-span-12 lg:col-span-8 group relative rounded-3xl bg-bg-secondary border border-[var(--glass-border)] p-8 transition-all duration-300 overflow-hidden hover:bg-white/[0.04] hover:border-white/10 hover:-translate-y-1 glass-card will-change-[transform,opacity]"
+          className="col-span-12 lg:col-span-8 group relative rounded-3xl bg-bg-secondary border border-[var(--glass-border)] p-8 transition-all duration-300 overflow-hidden hover:bg-text-primary/[0.04] hover:border-white/10 hover:-translate-y-1 glass-card will-change-[transform,opacity]"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-          <h3 className="text-[1.8rem] mb-4">I'm {profile.fullName}</h3>
+          <h3 className="text-[1.8rem] mb-4 text-text-primary">I'm {profile.fullName}</h3>
           
           {profile.about.bio.map((paragraph, i) => (
             <p key={i} className="text-text-secondary mb-4 text-[1.05rem] leading-relaxed">
@@ -39,7 +39,7 @@ export default function About() {
 
         {/* Profile Stats Card */}
         <motion.div 
-          className="col-span-12 lg:col-span-4 group relative rounded-3xl bg-bg-secondary border border-[var(--glass-border)] transition-all duration-300 overflow-hidden hover:bg-white/[0.04] hover:border-white/10 hover:-translate-y-1 glass-card p-0 flex items-center justify-center min-h-[300px] will-change-[transform,opacity]"
+          className="col-span-12 lg:col-span-4 group relative rounded-3xl bg-bg-secondary border border-[var(--glass-border)] transition-all duration-300 overflow-hidden hover:bg-text-primary/[0.04] hover:border-white/10 hover:-translate-y-1 glass-card p-0 flex items-center justify-center min-h-[300px] will-change-[transform,opacity]"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -62,7 +62,7 @@ export default function About() {
             {profile.educationJourney.map((edu, idx) => (
               <motion.div 
                 key={edu.degree}
-                className="group relative rounded-3xl bg-bg-secondary border border-[var(--glass-border)] p-8 transition-all duration-300 overflow-hidden hover:bg-white/[0.04] hover:border-white/10 hover:-translate-y-1 glass-card flex flex-col h-full will-change-[transform,opacity]"
+                className="group relative rounded-3xl bg-bg-secondary border border-[var(--glass-border)] p-8 transition-all duration-300 overflow-hidden hover:bg-text-primary/[0.04] hover:border-white/10 hover:-translate-y-1 glass-card flex flex-col h-full will-change-[transform,opacity]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -73,7 +73,7 @@ export default function About() {
                     <GraduationCap size={24} className="text-accent" />
                   </div>
                   <div className="flex-1 flex flex-col h-full">
-                    <h4 className="text-[1.2rem] mb-1">{edu.institution}</h4>
+                    <h4 className="text-[1.2rem] mb-1 text-text-primary">{edu.institution}</h4>
                     <p className="text-accent font-semibold text-[0.9rem] mb-3">{edu.degree}</p>
                     
                     <div className="flex flex-col gap-2 text-text-secondary text-[0.85rem] mb-4">
@@ -88,7 +88,7 @@ export default function About() {
                       </div>
                     </div>
                     
-                    <div className="mt-auto p-3 bg-white/[0.03] rounded-lg text-[0.85rem] italic border-l-2 border-accent">
+                    <div className="mt-auto p-3 bg-text-primary/[0.03] rounded-lg text-[0.85rem] italic border-l-2 border-accent">
                       {edu.highlight}
                     </div>
                   </div>
