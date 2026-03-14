@@ -14,20 +14,20 @@ export default function Projects() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((proj, idx) => (
-          <motion.div 
+          <motion.div
             key={proj.title}
-            className="group relative rounded-3xl bg-bg-secondary border border-[var(--glass-border)] p-6 sm:p-8 transition-all duration-300 overflow-hidden hover:bg-text-primary/[0.04] hover:border-white/10 hover:-translate-y-1 glass-card flex flex-col h-full will-change-[transform,opacity]"
+            className="group relative rounded-3xl bg-bg-secondary border border-[var(--glass-border)] p-6 sm:p-8 interactive-card flex flex-col h-full will-change-[transform,opacity]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
           >
             <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-            
+
             {proj.image && (
               <div className="relative -mx-6 -mt-6 sm:-mx-8 sm:-mt-8 mb-6 overflow-hidden rounded-t-[1.4rem] h-48 sm:h-56 bg-bg-tertiary">
-                <img 
-                  src={proj.image} 
+                <img
+                  src={proj.image}
                   alt={`${proj.title} Preview`}
                   className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                 />
@@ -55,7 +55,7 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-            
+
             <ul className="text-text-secondary text-[0.95rem] list-none p-0 flex flex-col gap-2 m-0">
               {proj.features?.map((feature, i) => (
                 <li key={i} className="relative pl-5 before:content-['◦'] before:absolute before:left-0 before:text-accent">

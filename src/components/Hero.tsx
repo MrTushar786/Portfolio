@@ -26,7 +26,7 @@ export default function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-[100px] w-full max-w-[1200px] mx-auto">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -39,7 +39,7 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      <motion.h1 
+      <motion.h1
         className="text-[clamp(3rem,8vw,6rem)] font-extrabold tracking-tighter mb-6 bg-gradient-to-b from-text-primary to-text-secondary bg-clip-text text-transparent"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export default function Hero() {
         {CONFIG.profile.fullName.toUpperCase()}
       </motion.h1>
 
-      <motion.h2 
+      <motion.h2
         className="text-[clamp(1.2rem,3vw,1.5rem)] text-text-secondary max-w-[600px] mx-auto mb-10"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ export default function Hero() {
         {CONFIG.hero.subtitle}
       </motion.h2>
 
-      <motion.div 
+      <motion.div
         className="h-10 text-[1.2rem] font-medium text-accent mb-10 flex items-center justify-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -77,7 +77,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Hero Stats - Smartly handling the extra space */}
-      <motion.div 
+      <motion.div
         className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-[600px] mx-auto w-full"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -91,20 +91,20 @@ export default function Hero() {
         ))}
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12 sm:mt-[48px]"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
-        <a 
-          href="#projects" 
+        <a
+          href="#projects"
           onClick={(e) => handleScroll(e, 'projects')}
           className="btn-primary w-full sm:w-auto"
         >
           See My Work
         </a>
-        <a 
+        <a
           href={cvFile}
           download={`${CONFIG.profile.fullName.replace(' ', '_')}_CV.pdf`}
           className="btn-secondary w-full sm:w-auto text-center justify-center"

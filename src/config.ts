@@ -66,7 +66,7 @@ export const CONFIG = {
     {
       company: "SmartMoney AI",
       role: "Frontend Web Developer",
-      type: "Part-time employee",
+      type: "Part-time Intern",
       duration: "Dec 2025 – Present",
       location: "Remote · India",
       isCurrent: true,
