@@ -44,7 +44,7 @@ export const CONFIG = {
       quote: "Building is good, but shipping is what proves skill."
     },
     status: {
-      label: "Part-time Employee",
+      label: "Part-time Intern",
       location: "Remote"
     }
   },
