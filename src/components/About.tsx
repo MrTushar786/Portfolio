@@ -15,9 +15,9 @@ export default function About() {
       <div className="grid grid-cols-12 gap-6 mb-12">
         {/* Main Bio Card */}
         <motion.div
-          className="col-span-12 lg:col-span-8 order-2 lg:order-1 group relative rounded-3xl bg-bg-secondary border border-[var(--glass-border)] p-8 interactive-card will-change-[transform,opacity]"
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+           className="col-span-12 group relative rounded-3xl bg-bg-secondary border border-[var(--glass-border)] p-8 interactive-card will-change-[transform,opacity]"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
@@ -34,25 +34,6 @@ export default function About() {
             <p className="text-accent font-bold">
               "{profile.about.quote}"
             </p>
-          </div>
-        </motion.div>
-
-        {/* Profile Stats Card */}
-        <motion.div
-          className="col-span-12 lg:col-span-4 order-1 lg:order-2 group relative rounded-3xl bg-bg-secondary border border-[var(--glass-border)] interactive-card p-0 flex items-center justify-center min-h-[300px] will-change-[transform,opacity]"
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <img
-            src="/photo.png"
-            alt={`${profile.fullName} Profile`}
-            className="w-full h-full object-cover object-[center_20%] grayscale-[0.1] contrast-[1.1]"
-          />
-          <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
-            <p className="font-bold text-[1.1rem]">{profile.fullName}</p>
-            <p className="text-[0.85rem] opacity-90">{profile.role}</p>
           </div>
         </motion.div>
 
