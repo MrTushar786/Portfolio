@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
+import { Analytics } from '@vercel/analytics/react'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -60,6 +61,7 @@ function App() {
       <Certifications />
       <TechStack />
       <Footer />
+      <Analytics />
     </main>
   )
 }
