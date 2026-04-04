@@ -158,47 +158,90 @@ export const CONFIG = {
   ],
   certifications: [
     {
-      title: "Java Programming (Core + OOP)",
-      issuer: "NeoColab",
-      date: "May 2025",
-      color: "#007396",
-      link: "https://drive.google.com/file/d/1ikiOJlvTdlynaIUPunt-slvWeeKb28S_/view"
+      title: "ChatGPT-4 Prompt Engineering",
+      issuer: "Generative AI & LLM",
+      date: "Aug 2025",
+      color: "#10A37F",
+      link: "/certificates/ChatGPT-4 Prompt Engineering ChatGPT, Generative AI & LLM.jpg"
+    },
+    {
+      title: "Build Generative AI Apps",
+      issuer: "No-Code Tools",
+      date: "Aug 2025",
+      color: "#7C3AED",
+      link: "/certificates/Build Generative Al Apps and Solutions with No-Code Tools.jpg"
+    },
+    {
+      title: "Finite Automata Theory",
+      issuer: "Language Principle",
+      date: "Aug 2025",
+      color: "#EF4444",
+      link: "/certificates/Computational Theory Language Principle & Finite Automata Theory.jpg"
+    },
+    {
+      title: "Master Generative AI Tools",
+      issuer: "ChatGPT & More",
+      date: "Aug 2025",
+      color: "#2563EB",
+      link: "/certificates/Master Generative Al & Generative Al tools (ChatGPT & more).jpg"
+    },
+    {
+      title: "Visual Design & Tech",
+      issuer: "Boston Scientific",
+      date: "July 2025",
+      color: "#004B87",
+      link: "/certificates/bostonScientific.jpeg"
     },
     {
       title: "NPTEL Cloud Computing",
       issuer: "Swayam",
-      date: "Feb 2025",
+      date: "April 2025",
       color: "#4F46E5",
-      link: "https://drive.google.com/file/d/1AC6BiJ0dyr6srqnFA7wL7I2bBs-2SUVJ/view"
+      link: "/certificates/Nptel.jpeg"
     },
     {
       title: "Programming in C++",
       issuer: "NeoColab",
       date: "Dec 2024",
       color: "#00599C",
-      link: "https://drive.google.com/file/d/1sWCBkl9IW-UGgJsHGssHR8x6XpxyCRUM/view"
+      link: "/certificates/c++.jpeg"
     },
     {
       title: "Data Structures & Algorithm",
       issuer: "NeoColab",
       date: "Dec 2024",
       color: "#10B981",
-      link: "https://drive.google.com/file/d/1GJvSz5npxyPq2p_2tOTKY9fxcDBRb6E9/view"
+      link: "/certificates/Dsa.jpeg"
+    },
+    {
+      title: "Java Programming (Core + OOP)",
+      issuer: "NeoColab",
+      date: "May 2024",
+      color: "#007396",
+      link: "/certificates/Java.jpeg"
     },
     {
       title: "Backend Web Development",
       issuer: "Rising Tech Pro",
       date: "March 2024",
       color: "#F59E0B",
-      link: "https://drive.google.com/file/d/1SyukQTyjZcpaT805uAGw87tuyqrONgtt/view"
+      link: "/certificates/riging tech pro.jpeg"
+    },
+    {
+      title: "Responsive Web Design",
+      issuer: "freeCodeCamp",
+      date: "Oct 2023",
+      color: "#0A0A23",
+      link: "/certificates/freeCodeCamp.jpeg"
     }
   ],
   achievements: [
     {
       title: "Code-A-Haunt (24-hour Hackathon)",
       role: "Hackathon Participant",
-      date: "Feb 2024",
-      description: "Demonstrated intense problem-solving and team collaboration under pressure. Focused on rapid development, efficient task distribution, and decision-making in a time-bound environment."
+      date: "March 2024",
+      description: "Demonstrated intense problem-solving and team collaboration under pressure. Focused on rapid development, efficient task distribution, and decision-making in a time-bound environment.",
+      link: "/certificates/hackathon.jpeg"
     }
   ],
   skills: {
